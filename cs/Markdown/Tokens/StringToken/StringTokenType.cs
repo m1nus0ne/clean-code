@@ -6,5 +6,8 @@ public enum StringTokenType
     NewLine,
     WhiteSpace,
     Hash, 
-    Unexpected
+    Unexpected,
+    DoubleUnderscore,
+    SingleUnderscore, 
+    Dash
 }

@@ -1,9 +1,9 @@
-﻿namespace Markdown.Tokens;
+﻿namespace Markdown.Tokens.HtmlToken;
 
 public abstract class BaseHtmlToken
 {
-    public List<BaseHtmlToken>? Children { get; private protected set; }
-    public string Value { get; private protected set; }
+    public List<BaseHtmlToken> Children { get; }
+    public abstract string Value { get; }
 
     public BaseHtmlToken(List<BaseHtmlToken>? children)
     {

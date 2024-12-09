@@ -10,9 +10,9 @@ public abstract class HtmlTokenWithTag : BaseHtmlToken
     public abstract Type OpenTypeToken { get; }
     public abstract Type CloseTypeToken { get; }
     public abstract string TagValue { get; }
-
+    public override string Value => string.Join("", Children!.Select(child => child.Value));
     public override string ToString()
     {
-        return $"<{TagValue}>{string.Join("", Children.Select(token => token.ToString()))}</{TagValue}>";
+        return $"<{TagValue}>{string.Join("", Children.InnerElements().Select(token => token.ToString()))}</{TagValue}>";
     }
 }

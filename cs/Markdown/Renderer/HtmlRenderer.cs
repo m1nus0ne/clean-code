@@ -8,6 +8,6 @@ public class HtmlRenderer : IRenderer<RootToken>
 {
     public string Render(RootToken root)
     {
-        throw new NotImplementedException();
+        return root.ToString() ?? string.Empty;
     }
 }

@@ -4,5 +4,5 @@ namespace Markdown.Maker;
 
 public interface IMaker<T>
 {
-    public T MakeFromTokens(List<StringToken> tokens);
+    public T MakeFromTokens(IEnumerable<StringToken> tokens);
 }

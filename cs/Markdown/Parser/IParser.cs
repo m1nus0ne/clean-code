@@ -4,5 +4,5 @@ namespace Markdown.Parser;
 
 public interface IParser
 {
-    public List<StringToken> Parse(string input);
+    public IEnumerable<StringToken> Parse(string input);
 }

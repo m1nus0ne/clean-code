@@ -1,14 +1,18 @@
 ﻿using Markdown.Maker;
 using Markdown.Parser;
 using Markdown.Rendered;
+using Markdown.Tokens;
+using Markdown.Tokens.HtmlToken;
 
 namespace Markdown;
 
-public class Md<TResult>
+public class Md(IParser parser, IMaker<RootToken> maker, IRenderer<RootToken> renderer)
 {
-    public string Render(string input, IParser parser, IMaker<TResult> maker, IRenderer<TResult> renderer)
+    
+
+    public string Render(string input)
     {
-        var tokens = new MarkdownParser().Parse(input);
+        var tokens = parser.Parse(input);
         var model = maker.MakeFromTokens(tokens);
         return renderer.Render(model);
     }
